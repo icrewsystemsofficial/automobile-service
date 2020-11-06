@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet">
     <!-- Theme CSS -->
     <link type="text/css" href="{{ asset('theme/assets/css/theme.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('theme/assets/css/custom.css') }}">
     <!-- <link rel="stylesheet" href="https://fontawesome.com/"> -->
 </head>
 <body>
@@ -29,10 +30,7 @@
                 <a class="nav-link" href="#">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contact Us</a>
+                <a class="nav-link" href="#">Testimonials</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbar_1_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
@@ -45,82 +43,54 @@
                     <a class="dropdown-item" href="#">Any Other Work?</a>
                 </div>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+            </li>
         </ul>
         <ul class="navbar-nav ml-auto">
+          @guest
+           @if (Route::has('login'))
             <li class="nav-item">
-                <a class="nav-link nav-link-icon" href="#"><i class="fas fa-cogs"></i></a>
+              <a class="nav-link" href="{{ route('login')}}">{{ __('Login') }}</a>
             </li>
+            @endif
+            
+            @if(Route::has('register'))
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+            </li>
+            @endif
+            @else
+
             <li class="nav-item dropdown">
-                <a class="nav-link nav-link-icon" href="#" id="navbar_1_dropdown_2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bell"></i></a>
-                <div class="dropdown-menu dropdown-menu-right dropdown-menu-xl py-0">
-                    <div class="py-3 px-3">
-                        <h5 class="heading h6 mb-0">Notifications</h5>
-                    </div>
-                    <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-                            <div class="list-group-img">
-                                <span class="avatar bg-purple">JD</span>
-                            </div>
-                            <div class="list-group-content">
-                                <div class="list-group-heading">Johnyy Depp <small>10:05 PM</small></div>
-                                <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipiscing eiusmod tempor</p>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-                            <div class="list-group-img">
-                                <span class="avatar bg-pink">TC</span>
-                            </div>
-                            <div class="list-group-content">
-                                <div class="list-group-heading">Tom Cruise <small>10:05 PM</small></div>
-                                <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipiscing eiusmod tempor</p>
-                            </div>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-                            <div class="list-group-img">
-                                <span class="avatar bg-blue">WS</span>
-                            </div>
-                            <div class="list-group-content">
-                                <div class="list-group-heading">Will Smith <small>10:05 PM</small></div>
-                                <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipiscing eiusmod tempor</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="py-3 text-center">
-                        <a href="#" class="link link-sm link--style-3">View all notifications</a>
-                    </div>
-                </div>
+              <a href="#" id="navbarDropdown" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                {{ Auth::user()->name}}
+              </a>
+
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a href="{{ route('logout') }}" style="margin-left: 10px" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            <i class="fas fa-sign-out-alt"></i>
+                 {{ __('Logout')}}        
+                </a>
+
+                <form action="{{ route('logout') }}" id="logout-form" method="POST" class="d-none">
+                  @csrf
+                </form>
+              </div>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link nav-link-icon" href="#" id="navbar_1_dropdown_3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <h6 class="dropdown-header">User menu</h6>
-                    <a class="dropdown-item" href="#">
-                        <span class="float-right badge badge-primary">4</span>
-                        <i class="fas fa-envelope text-primary"></i>Messages
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <i class="fas fa-cog text-primary"></i>Settings
-                    </a>
-                    <div class="dropdown-divider" role="presentation"></div>
-                    <a class="dropdown-item" href="{{ route('login') }} ">
-                    @if (Route::has('login'))
-                     <div>
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">
-                        <i class="fa fa-home"></i>Home</a>
-                    @else
-                      <a href="{{ route('login') }}">Login</a> 
-                    @endif
-                  </div>
-                  @endif
-                        <!-- <i class="fas fa-sign-out-alt text-primary"></i>Sign out -->
-                    </a>
-                </div>
-            </li>
+          @endguest
         </ul>
     </div>
-</nav>
-    </header>
+     </nav>
+  </header>
+
+
+
+
+
+
+
     <div class="app">
      @yield('content')
     </div>

@@ -1,0 +1,19 @@
+.about_section {
+    padding: 20vmin 0;
+}
+.about_section .row .col-md-6 .about_img img {
+    width: 80%;
+    border-radius: 0.2rem;
+}
+
+.about_section .row .col-md-6:last-child {
+    position: relative;
+}
+.about_section .row .col-md-6 .pannel {
+    position: absolute;
+    top: 7vmin;
+    left: -18vmin;
+    background: white;
+    padding: 13vmin 5vmin 20vmin 10vmin;
+    z-index: 1;
+}
