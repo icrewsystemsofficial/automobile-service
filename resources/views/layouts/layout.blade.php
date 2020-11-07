@@ -16,21 +16,21 @@
 </head>
 <body>
     <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Billy Auto Services</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_example_1" aria-controls="navbar_example_1" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbar_example_1">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Billy Auto Services</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_example_1" aria-controls="navbar_example_1" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar_example_1">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ route('home') }} ">Home <span class="sr-only">(current)</span></a>
+              </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Testimonials</a>
+                <a class="nav-link" href="{{ route('testimonials') }}">Testimonials</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbar_1_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
@@ -40,11 +40,11 @@
                     <a class="dropdown-item" href="#">Air Conditioning Service</a>
                     <a class="dropdown-item" href="#">Fuel/Air Induction Checkup</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Any Other Work?</a>
+                    <a class="dropdown-item" href="{{ route('carrent') }}">Need a Car?</a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contact Us</a>
+                <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -64,7 +64,8 @@
 
             <li class="nav-item dropdown">
               <a href="#" id="navbarDropdown" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name}}
+               <i class="fas fa-user mr-1"></i>  {{ Auth::user()->name}}
+               <i class="fas fa-caret-down ml-1"></i>
               </a>
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -84,12 +85,6 @@
     </div>
      </nav>
   </header>
-
-
-
-
-
-
 
     <div class="app">
      @yield('content')
