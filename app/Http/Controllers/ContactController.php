@@ -21,7 +21,7 @@ class ContactController extends Controller
            'phone' => $request->phone,
            'msg' => $request->msg
        ];
-       
+    //    Change the mail address for checking
        Mail::to('billysautoservice765@gmail.com')->send(new ContactMail($details));
        
        return back()->with('message_sent','Your message has been sent successfully');

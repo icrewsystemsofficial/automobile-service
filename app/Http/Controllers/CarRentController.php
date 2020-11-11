@@ -21,7 +21,7 @@ class CarRentController extends Controller
             'cartype' => $request->cartype,
             'addr' => $request->addr
         ];
-
+        // change the mail address for checking
         Mail::to('billysautoservice765@gmail.com')->send(new carMail($car));
         
         return back()->with('message_sent','Thank you for your request');
