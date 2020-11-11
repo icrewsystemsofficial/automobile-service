@@ -3,7 +3,7 @@
 @section('content')
 <div>
 <section class="spotlight parallax bg-cover bg-size--cover" data-spotlight="fullscreen" 
-style="background-image: url('{{ asset('theme/assets/images/backgrounds/img-1.jpg') }}')">
+ style="background-image: url('{{ asset('theme/assets/images/backgrounds/img-1.jpg') }}')">
         <!-- <span class="mask bg-primary alpha-7"></span> -->
         <div class="spotlight-holder py-lg pt-lg-xl">
           <div class="container d-flex align-items-center no-padding">
@@ -24,6 +24,7 @@ style="background-image: url('{{ asset('theme/assets/images/backgrounds/img-1.jp
           </div>
         </div>
 </section>
+
 <!-- services we offer -->
 <section>
     <div class="py-5">
@@ -105,24 +106,25 @@ style="background-image: url('{{ asset('theme/assets/images/backgrounds/img-1.jp
         </div>
     </div>
 </section>
+
 <!-- process section -->
-<section class="bg-light" style="height: 40vh;">
+<section class="bg-light ">
   <div class="container">
-    <h1 class="text-center py-4" style="font-size: 45px;">Our Process</h1>
-    <div class="row mx-auto">
-      <div class="col-md-4 mb-2 ">
+    <h1 class="text-center" style="font-size: 45px;">Our Process</h1>
+    <div class="row mx-auto p-5">
+      <div class="col-md-4">
         <h3> 
           <span style="color: tomato">1.</span>
           Choose a Service
         </h3>
       </div>
-      <div class="col-md-4 mb-2">
+      <div class="col-md-4 ">
         <h3> 
           <span style="color: tomato;">2.</span>
          Confirm a Request
         </h3>
       </div>
-      <div class="col-md-4 mb-2">
+      <div class="col-md-4 ">
         <h3> 
           <span style="color: tomato;">3.</span>
           Get Your Car
@@ -131,6 +133,60 @@ style="background-image: url('{{ asset('theme/assets/images/backgrounds/img-1.jp
     </div>
   </div>
 </section>
+
+<!-- why choose us -->
+<section>
+  <div class="py-5">
+    <div class="container">
+      <div class="text-center mb-5"><h1>Why Choose Us</h1></div>
+        <div class="row mx-auto">
+          <div class="col-md-4">
+            <div class="text-center">
+              <i class="fas fa-hand-holding-heart fa-7x"></i>
+              <h5>Friendly and Honest Service</h5>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="text-center">
+              <i class="fas fa-fire fa-7x"></i>
+              <h5>24/7 Emergency Vehicle Repair</h5>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="text-center">
+              <i class="fas fa-couch fa-7x "></i>
+              <h5>Comfortable Waiting Area with Free WiFi</h5>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="text-center">
+            <i class="fas fa-tools fa-7x"></i>
+              <h5>Ase Certified Technicians</h5>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="text-center">
+            <i class="fas fa-award fa-7x"></i>
+              <h5>12-Month/12,000 Mile Warranty</h5>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="text-center">
+            <i class="far fa-handshake fa-7x"></i>
+              <h5>Clients Trust Us for Over 28 Years</h5>
+            </div>
+          </div>
+          
+        </div>
+    </div>
+  </div>
+</section>
+
 <!-- about us -->
 <section class="about_section">
   <div class="container">
@@ -147,8 +203,9 @@ style="background-image: url('{{ asset('theme/assets/images/backgrounds/img-1.jp
     </div>
   </div>
 </section>
+
 <!-- Testimonials -->
-<section>
+<section class="py-5">
   <div class="container">
     <h1 class="text-center">Testimonials</h1>
     <div class="row mx-auto">
@@ -190,23 +247,23 @@ style="background-image: url('{{ asset('theme/assets/images/backgrounds/img-1.jp
 </section>
 
 <!-- partners section -->
-<section class="bg-light" >
+<section class="bg-light mb-5" >
     <div class="contianer"> 
       <h1 class="text-center">Our Partners</h1>
-      <div class="row mx-auto">
+      <div class="row mx-auto py-2">
         <div class="col-md-4 mb-5">
           <center>
-            <img src="{{ asset('theme/assets/images/brand/mobil.png') }}"  alt="">
+            <img src="{{ asset('theme/assets/images/brand/benz.png') }}"  alt="benz logo">
           </center>
         </div>
         <div class="col-md-4 mb-5">
           <center>
-            <img src="{{ asset('theme/assets/images/brand/benz.png') }}" alt="">
+            <img src="{{ asset('theme/assets/images/brand/lukoil.png') }}" alt="lukoil logo">
           </center>
         </div>
         <div class="col-md-4 mb-5">
           <center>
-            <img src="{{ asset('theme/assets/images/brand/lukoil.png') }}" alt="">
+            <img src="{{ asset('theme/assets/images/brand/mobil.png') }}" alt="mobil logo">
           </center>
         </div>
       </div>

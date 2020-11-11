@@ -4,19 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content=""/>                          
-    <meta name="author" content="Webpixels">
-    <title>Car Repair Website</title>
+    <meta name="keywords" content="billy autoservices in chennai,billy autoservices,billy automivie service,onlie car repair request sevices, car repair service,automobile services, oil services,car customizing, car customization,autmobile painting services,automobile workshop near me,car rental services near me, car rental service,car garage ,fuel induction cleaning service, cooling system service, car air cooler serivce near me, car repair services in chennai, automobile garage in chennai, billy autoservices in chennai , billy's auto services in india, count kustoms, ricks restoration , car restoring service, workshop, car garage , car rental for low price,  car rental for long trips , luxury car's for rental , luxury car's rental for low price, paint job work for low price , best automobile workshop in chennai, best automobile workshop near me, best oil and oil filter services near me, best fuel induction cleanup near me, mechanics near me , meachnical workshop near me, best mechanical work shop, mechanical work for low cost">                        
+    <meta name="author" content="Thirumalai Raj">
+    <title>Billy's Auto serivce</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet">
     <!-- Theme CSS -->
     <link type="text/css" href="{{ asset('theme/assets/css/theme.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('theme/assets/css/custom.css') }}">
-    <!-- <link rel="stylesheet" href="https://fontawesome.com/"> -->
+    <link rel="text/css" href="{{ asset('theme/assets/css/custom.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/14f3a83351.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fontawesome.com/">
 </head>
 <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Billy Auto Services</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_example_1" aria-controls="navbar_example_1" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -24,21 +25,18 @@
       <div class="collapse navbar-collapse" id="navbar_example_1">
           <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                  <a class="nav-link" href="{{ route('home') }} ">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="{{ route('home') }} ">Home<span class="sr-only">(current)</span></a>
               </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About Us</a>
+                <a class="nav-link" href="about us">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('testimonials') }}">Testimonials</a>
+                <a class="nav-link" href="{{ route('viewtestimonial') }}">Testimonials</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbar_1_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
                 <div class="dropdown-menu" aria-labelledby="navbar_1_dropdown_1">
-                    <a class="dropdown-item" href="#">Oil and Oil Filter</a>
-                    <a class="dropdown-item" href="#">Cooling System</a>
-                    <a class="dropdown-item" href="#">Air Conditioning Service</a>
-                    <a class="dropdown-item" href="#">Fuel/Air Induction Checkup</a>
+                    <a class="dropdown-item" href="{{ route('repairwork') }}">Repair work</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{ route('carrent') }}">Need a Car?</a>
                 </div>
@@ -82,13 +80,15 @@
             </li>
           @endguest
         </ul>
-    </div>
+      </div>
      </nav>
   </header>
 
     <div class="app">
      @yield('content')
     </div>
+
+
     <footer class="pt-5 pb-3 footer  footer-dark bg-tertiary">
       <div class="container">
         <div class="row">
@@ -99,14 +99,13 @@
             </div>
           </div>
           <div class="col-6 col-md">
-            <h5 class="heading h6 text-uppercase font-weight-700 mb-3">Features</h5>
+            <h5 class="heading h6 text-uppercase font-weight-700 mb-3">Service</h5>
             <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Cool stuff</a></li>
-              <li><a class="text-muted" href="#">Random feature</a></li>
-              <li><a class="text-muted" href="#">Team feature</a></li>
-              <li><a class="text-muted" href="#">Stuff for developers</a></li>
-              <li><a class="text-muted" href="#">Another one</a></li>
-              <li><a class="text-muted" href="#">Last time</a></li>
+              <li><a class="text-muted" href="#">Oil and Oil Filter Service</a></li>
+              <li><a class="text-muted" href="#">Air Conditioning Service</a></li>
+              <li><a class="text-muted" href="#">Fuel Induction Clean up </a></li>
+              <li><a class="text-muted" href="#">Car Cutomization</a></li>
+              <li><a class="text-muted" href="#">Car Rental</a></li>
             </ul>
           </div>
           <div class="col-6 col-md">
@@ -118,29 +117,12 @@
               <li><a class="text-muted" href="#">Final resource</a></li>
             </ul>
           </div>
-          <div class="col-6 col-md">
-            <h5 class="heading h6 text-uppercase font-weight-700 mb-3">Resources</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Business</a></li>
-              <li><a class="text-muted" href="#">Education</a></li>
-              <li><a class="text-muted" href="#">Government</a></li>
-              <li><a class="text-muted" href="#">Gaming</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md">
-            <h5 class="heading h6 text-uppercase font-weight-700 mb-3">About</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Team</a></li>
-              <li><a class="text-muted" href="#">Locations</a></li>
-              <li><a class="text-muted" href="#">Privacy</a></li>
-              <li><a class="text-muted" href="#">Terms</a></li>
-            </ul>
-          </div>
+    
         </div>
         <hr>
         <div class="d-flex align-items-center">
           <span class="">
-            &copy; 2018 <a href="https://webpixels.io/" class="footer-link" target="_blank">Webpixels</a>. All rights reserved.
+            &copy; 2020 <a href="https://webpixels.io/" class="footer-link" target="_blank">Billy Auto Services</a>. All rights reserved.
           </span>
           <ul class="nav ml-lg-auto">
             <li class="nav-item">

@@ -8,7 +8,7 @@
             <div class="col-md-6 offset-md-3">
                 <div class="card my-5">
                     <div class="card-header bg-light text-gray">
-                        Car Rent
+                        <h3>Car Rent</h3>
                     </div>
                     <div class="card-body">
                         @if(Session::has('message_sent'))
@@ -19,21 +19,17 @@
                         <form action="{{ route('car.request') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" name="name" class="form-control" required />
+                            <input type="text" name="name" placeholder="Enter your name" class="form-control" required />
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="text" name="phone" class="form-control" required />
+                            <input type="text" name="phone" placeholder="Enter your phone" class="form-control" required />
                         </div>
                         <div class="form-group">
-                            <label for="cartype">Type of car you need</label>
-                            <input type="text" name="cartype" class="form-control" />
+                            <input type="text" placeholder="Type of car you need?" name="cartype" class="form-control" />
                         </div>
 
                         <div class="form-group">
-                            <label for="addr">Address</label>
-                            <textarea name="addr" class="form-control" required></textarea>
+                            <textarea name="addr" placeholder="Your address" class="form-control" required></textarea>
                         </div>
                         
 
